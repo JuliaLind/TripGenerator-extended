@@ -14,7 +14,8 @@ export const addMap = async (counter) => {
         maxZoom: 19,
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
-    for (const cityid of [1, 2, 3]) {
+    // put the names of the city-json files into this array
+    for (const cityid of [1]) {
         const cityFile = await fetch(`../../cities/${cityid}.json`);
         const city = await cityFile.json();
         let geojsonFeature = city.coords;
